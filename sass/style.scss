@@ -1,11 +1,153 @@
 $font-stack: Helventica, sans-serif;
 $primary-color: #333;
+$background: url("../img/wallpaper.jpg") no-repeat;
+$background-color: rgba(107, 204, 232, 0.7);
+$widget-color: rgba(25, 121, 159, 0.6);
+$block-width: 200px;
 
-body {
-  font: 100% $font-stack; color: $primary-color;
-  background: pink;
+* {
+  font-family: Chalkboard;
+}
+
+.basic-widget {
+  display: inline-block;
+  background-color: $widget-color;
+  padding: 15px 30px 15px 15px;
+  border-radius: 10px;
+  vertical-align: top;
+  margin: auto;
+  width: $block-width;
+  height: 200px;
+  margin: 5px;
+  overflow: scroll;
+}
+
+.widget-section {
+  @extend .basic-widget;
+}
+
+.widget-aside {
+  @extend .basic-widget;
+}
+
+.section {
+  display: inline-block;
+  font-size: 15px;
 }
 
 h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+body {
+  font: $font-stack;
+  font-size: 11px;
+  color: $primary-color;
+  background: $background;
+  line-height: 18px;
+}
+
+.page-wrapper {
+  background-color: $background-color;
+  height: 100%;
+  margin: 0 10%;
+  padding: 15px;
+  border-radius: 10px;
+
+  $div-width: 70%;
+
+  div {
+    display: inline-block;
+    width: 100%;
+
+    div {
+      width: 100%;
+    }
+  }
+
+  #zen-intro {
+    header {
+      font-family: 'Lucida Grande', sans-serif;
+    }
+
+    div {
+      @extend .section;
+      text-align: justify;
+    }
+  }
+
+  #zen-supporting {
+    @extend .section;
+
+    height: 250px;
+    margin: auto;
+    width: 100%;
+  }
+
+  #zen-supporting {
+    margin-bottom: 20px;
+    //overflow: scroll;
+    //height: 400px;
+
+    footer {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    div {
+      @extend .widget-section;
+    }
+  }
+
+  aside.sidebar {
+    margin: auto;
+    width: 80%;
+
+    .wrapper {
+      width: 100%;
+    }
+
+    div div {
+      @extend .widget-aside;
+      display: inline-block;
+      width: $block-width;
+    }
+
+    //height: 460px;
+    //width: 27%;
+    //margin-top: -80px;
+    font-size: 15px;
+    //float: right;
+
+    ul {
+      padding-left: 10px;
+      width: 100%;
+
+      li {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+abbr {
 
 }
+
+a {
+
+}
+
+p {
+
+}
+
