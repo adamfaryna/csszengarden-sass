@@ -1,38 +1,9 @@
-$font-stack: Helventica, sans-serif;
-$primary-color: #333;
-$background: url("../img/wallpaper.jpg") no-repeat;
-$background-color: rgba(107, 204, 232, 0.7);
-$widget-color: rgba(25, 121, 159, 0.6);
-$block-width: 200px;
+@import "variables";
+@import "widget";
+@import "mixins";
 
 * {
-  font-family: Chalkboard;
-}
-
-.basic-widget {
-  display: inline-block;
-  background-color: $widget-color;
-  padding: 15px 30px 15px 15px;
-  border-radius: 10px;
-  vertical-align: top;
-  margin: auto;
-  width: $block-width;
-  height: 200px;
-  margin: 5px;
-  overflow: scroll;
-}
-
-.widget-section {
-  @extend .basic-widget;
-}
-
-.widget-aside {
-  @extend .basic-widget;
-}
-
-.section {
-  display: inline-block;
-  font-size: 15px;
+  font-family: Chalkboard, $font-stack;
 }
 
 h1 {
@@ -63,30 +34,24 @@ body {
   padding: 15px;
   border-radius: 10px;
 
-  $div-width: 70%;
-
   div {
     display: inline-block;
     width: 100%;
-
-    div {
-      width: 100%;
-    }
   }
 
   #zen-intro {
     header {
-      font-family: 'Lucida Grande', sans-serif;
+      font-family: $section-header-font;
     }
 
     div {
-      @extend .section;
+      @include section;
       text-align: justify;
     }
   }
 
   #zen-supporting {
-    @extend .section;
+    @include section;
 
     height: 250px;
     margin: auto;
@@ -95,8 +60,6 @@ body {
 
   #zen-supporting {
     margin-bottom: 20px;
-    //overflow: scroll;
-    //height: 400px;
 
     footer {
       text-align: center;
@@ -104,29 +67,23 @@ body {
     }
 
     div {
-      @extend .widget-section;
+      @extend .widget;
     }
   }
 
   aside.sidebar {
     margin: auto;
     width: 80%;
+    font-size: 15px;
 
     .wrapper {
       width: 100%;
     }
 
     div div {
-      @extend .widget-aside;
-      display: inline-block;
-      width: $block-width;
+      @extend .widget;
+      text-align: initial;
     }
-
-    //height: 460px;
-    //width: 27%;
-    //margin-top: -80px;
-    font-size: 15px;
-    //float: right;
 
     ul {
       padding-left: 10px;
@@ -138,16 +95,3 @@ body {
     }
   }
 }
-
-abbr {
-
-}
-
-a {
-
-}
-
-p {
-
-}
-

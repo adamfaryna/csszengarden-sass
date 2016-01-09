@@ -1,0 +1,4 @@
+@mixin section($font-size: 15px) {
+  display: inline-block;
+  font-size: $font-size;
+}

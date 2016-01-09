@@ -1,0 +1,13 @@
+.widget {
+  display: inline-block;
+  background-color: $widget-color;
+  padding: 15px 30px 15px 15px;
+  border-radius: 10px;
+  vertical-align: top;
+  margin: auto;
+  width: $block-width;
+  height: 200px;
+  margin: 5px;
+  overflow: scroll;
+  text-align: justify;
+}
