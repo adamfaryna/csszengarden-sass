@@ -19,7 +19,10 @@ gulp.task('serve', ['sass'], function() {
 gulp.task('sass', function() {
   return gulp.src('sass/*.scss')
     .pipe(sass())
-    .pipe(autoprefixer('last 1 version', '> 1%', 'ie 8', 'ie 7'))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest('app/build'))
     .pipe(browserSync.stream());
 });
