@@ -1,6 +1,7 @@
 .widget {
   display: inline-block;
   background-color: $widget-color;
+  @include opacity(95);
   padding: 15px 30px 15px 15px;
   border-radius: 10px;
   vertical-align: top;

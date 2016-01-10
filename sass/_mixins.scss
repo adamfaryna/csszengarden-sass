@@ -2,3 +2,8 @@
   display: inline-block;
   font-size: $font-size;
 }
+
+@mixin opacity($opacity) {
+  filter: alpha(opacity=#{$opacity}); // IE 5-9+
+  opacity: $opacity * 0.01;
+}
